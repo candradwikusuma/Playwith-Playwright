@@ -18,7 +18,7 @@ test.describe("Cart", () => {
 
   })
 
-  test.only("with dynamicly find the product from list", async ({ page }) => {
+  test("with dynamicly find the product from list", async ({ page }) => {
     const loginPage = new LoginPage(page)
     const marketPage = new MaketplacePage(page)
     const cartPage = new CartPage(page)

@@ -57,7 +57,7 @@ test("UI Control", async ({ page }) => {
   // await page.pause()
 })
 
-test.only("Control New Page", async ({ browser }) => {
+test("Control New Page", async ({ browser }) => {
   const context = await browser.newContext()
   const page = await context.newPage()
   const login = new LoginPage2(page)
