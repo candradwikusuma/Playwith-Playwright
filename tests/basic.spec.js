@@ -6,6 +6,7 @@ const LoginPage2 = require("../pages/loginPage2.spec")
 test("testing context", async ({ browser }) => {
   const context = await browser.newContext()
   const page = await context.newPage()
+
   const loginPage = new LoginPage(page)
   const marketPage = new MarketPage(page)
   await page.goto('https://rahulshettyacademy.com/client')
@@ -37,10 +38,13 @@ test("testing page", async ({ page }) => {
 
 
 
-test("UI Control", async ({ page }) => {
+test.only("UI Control", async ({ page }) => {
   const login = new LoginPage2(page)
   const status = "user"
+  // await page.route("**/*.{jpg,png,jpeg}", route => route.abort())
+  // await page.route("**/*.css", route => route.abort())
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
+  // await page.pause()
   await login.login("candra", "dwi", "Student", "user")
   if (status === "user") {
     await page.locator("#okayBtn").click()
